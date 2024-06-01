@@ -1,0 +1,41 @@
+// create a variable to hold your NFT's
+const NFTcar=[]
+
+// this function will take in some values as parameters, create an NFT object using the parameters passed to it for its metadata, and store it in the variable above.
+function mintNFT (companyname,modelname,carcolor) {
+    const NFTmark={
+        "CompanyName": companyname,
+        "ModelName": modelname,
+        "Color": carcolor
+    };
+    NFTcar.push(NFTmark);
+    
+}
+
+// create a "loop" that will go through an "array" of NFT's and print their metadata with console.log()
+function listNFTs () {
+    for (let i=0;i<NFTcar.length;i++){
+        console.log("\nNumber:-"+(i+1));
+        console.log("\nCompany Name:-"+ NFTcar[i].CompanyName);
+        console.log("Model Name:-"+ NFTcar[i].ModelName);
+        console.log("Car color:-"+ NFTcar[i].Color);
+        
+        
+    }
+
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    console.log("\nTotal number of NFTs minted:-"+NFTcar.length+"\n\n");
+
+}
+
+// call your functions below this line
+mintNFT ("Koenigsegg", "Agera", "Black");
+mintNFT ("Pagani", "Huayra", "Grey");
+mintNFT ("Ferrari", "SF90", "Red");
+mintNFT ("Lamborghini", "Aventador", "Black");
+mintNFT ("Land Rover", "Range Rover", "Belgravia Green");
+listNFTs();
+getTotalSupply();
